@@ -3,11 +3,16 @@
 
 *{
     box-sizing: border-box;
-    /* font-family: 'Ubuntu', sans-serif; */
     font-family: 'Lato', sans-serif;
 }
 
 .clear-fix{
+    clear: both;
+}
+
+.clear-fix::after{
+    display: block;
+    content: "";
     clear: both;
 }
 
@@ -45,123 +50,189 @@ h6{
 
 /* Layouts */
 
-header{
-
-    /* background-color: brown; */
-}
-
-main{
-    background-color: red;
-}
-
-footer{
-    background-color: lawngreen;
-}
-
 .container{
     width: 1170px;
-    overflow: hidden;
-}
-
-nav, ul{
-    overflow: hidden;
-}
-
-/* header */
-
-.container>div>div{
-    padding-top: 10px;
-}
-
-#top-row{
-    padding: 10px 0;
-    height: 80px;
-}
-
-#top-row>.container{
+    /* margin: 0 auto; */
     margin-left: auto;
     margin-right: auto;
 }
 
-#nav-row{
-    background-color: blue;
+#app-row{
+    /* background-color: yellow; */
+    height: 80px;
+}
+
+#app-row>.container{
+    /* background-color: teal; */
+    height: 100%;
+    padding: 10px 0;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
 }
 
 #logo{
     height: 60px;
-    padding-left: 15px;
+    /* float: left; */
 }
 
-#top-row>.container>img{
+#app-row>.container>.wrapper{
+    float: right;
+    /* background-color: rgb(96, 231, 33); */
+    width: 70%;
+    height: 100%;
+}
+
+#app-row>.container>image{
+    /* background-color: aquamarine; */
     float: left;
 }
 
-#top-row>.container>div{
+
+
+#app-row>.container>.wrapper>.row:first-child{
+    /* background-color: white; */
+}
+
+#app-row>.container>.wrapper>.row:last-child{
+    /* background-color: rgb(28, 101, 150); */
+}
+
+#nav-lang{
     float: right;
 }
 
-
-/* #img-row>.container>div{
-    float: right;
-} */
-
-#nav-lang>li{
-    cursor: pointer;
-}
-
-#nav-lang>li:hover{
-    text-decoration: underline;
-    color: #ff9d1e;
+nav>li>a{
+    font-size: 0.8rem;
+    color: black;
+    text-decoration: none;
 }
 
 #nav-lang li{
-    float: right;
-    padding: 5px;
-    margin-left: 10px;
-    font-size: 0.8rem;
-    font-size: 12px;
-}
-
-#main-nav li{
     float: left;
-    padding: 10px 20px 0;
-    font-size: 0.8rem;
-    /* font-size: 14px; */
+    padding-left: 20px;  
 }
 
-#main-nav li:hover {
-    text-decoration: underline;
+#nav-lang>li>a:hover{
     cursor: pointer;
+    color: #ff9d1e;
+    text-decoration: underline;
 }
 
 #main-nav{
     float: left;
+    /* background-color: yellow; */
+    padding-top: 25px;
 }
 
-#smi-container>li{
+#main-nav li{
     float: left;
-    padding: 5px;
-    background-color: yellow;
+    padding: 0 25px;
+}
+
+#main-nav>nav>li>a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#smi-container{
+    float: right;
+    padding-top: 18px;
+}
+
+#smi-container>ul>li{
+    /* background-color: green; */
+    float: left;
     margin-left: 10px;
 }
 
-#smi-container>li:nth-child(1) {
-    cursor: pointer;
+#smi-container>ul>li>a>ion-icon{
+    padding: 5px;
+    font-size: 18px;
+}
+
+#smi-container>ul>li:nth-child(1){
     background-color: #3f4da1;
 }
-#smi-container>li:nth-child(2) {
-    cursor: pointer;
+
+#smi-container>ul>li:nth-child(2){
     background-color: #57a0d7;
 }
-#smi-container>li:nth-child(3) {
-    cursor: pointer;
+
+#smi-container>ul>li:nth-child(3){
     background-color: #57a0d7;
 }
-#smi-container>li:nth-child(4) {
-    cursor: pointer;
+
+#smi-container>ul>li:nth-child(4){
     background-color: #d74527;
 }
-#smi-container>li>ion-icon {
+
+#smi-container>ul>li>a>ion-icon {
     color: white;
 }
 
+/* Nav Row */
+
+#nav-row{
+    background-color: #231f20;
+}
+
+#nav-row nav li{
+    float: left;
+}
+
+#nav-row>.container>nav>li>a{
+    display: inline-block;
+    color: white;
+    padding: 15px;
+    position: relative;
+}
+
+#nav-row>.container>nav>li>a:hover{
+    cursor: pointer;
+    background-color: #ff9d1e;
+    color: #2b2b2b;
+}
+
+#nav-row nav li a::after{
+    opacity: 0;
+    position: absolute;
+    display: block;
+    content: "";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #ff9d1e;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+}
+
+#nav-row nav li a:hover::after{
+    opacity: 1;
+}
+
+#misc-row{
+    background-color: #ffde00;
+    text-align: right;
+
+}
+
+#misc-row .btn{
+    display: inline-block;
+    background-color: #107ece;
+    color: white;
+    border-bottom: 2px solid #0f027b;
+    padding: 0 10px;
+    text-transform: uppercase;
+    line-height: 40px;
+    text-decoration: none;
+    margin: 4px 0;
+    height: 40px;
+    font-size: 13px;
+    border-radius: 4px;
+    
+    
+}
+
+#misc-row .btn:hover{
+    background-color: #0865a9;
+}
