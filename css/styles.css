@@ -251,13 +251,13 @@ main>.row:first-child>.container>.col{
 main .row:first-child>.container>.col:first-child{
     /* background-color: #d74527; */
     width: 75%;
-    float: left;
+    /* float: left; */
 }
 
 main .row:first-child>.container>.col:last-child{
     /* background-color: #054981; */
     width: 25%;
-    float: right;
+    /* float: right; */
 }
 
 main .row:first-child>.container>.col:first-child>ul li{
@@ -269,29 +269,28 @@ main .row:first-child>.container>.col:first-child>ul li{
 }
 
 main .row:first-child>.container>.col:first-child>ul li h3{
-    text-align: left;
-    font-size: 1.15rem;
+    font-size: 18px;
     padding: 10px 0;
-}
-
-main .row:first-child>.container>.col:first-child>ul li img{
-    border: 3px solid transparent;
 }
 
 main .row:first-child>.container>.col:first-child>ul li a{
     display: inline-block;
     text-decoration: none;
     color: #000000;
-    width: 60px;
-    text-align: center;
+    /* width: 60px;
+    text-align: center; */
 }
 
 main .row:first-child>.container>.col:first-child>ul li a:hover{
     text-decoration: underline;
 }
 
-main .row:first-child>.container>.col:first-child>ul li img:hover{
-    border: 3px solid #ff9d1e;
+main .row:first-child>.container>.col:first-child>ul li img{
+    border: 3px solid transparent;
+}
+
+main .row:first-child>.container>.col:first-child>ul li a:hover img{
+    border: 3px solid #ffde00;
 }
 
 main .row:first-child>.container>.col:first-child>ul li .country-code{
@@ -299,8 +298,6 @@ main .row:first-child>.container>.col:first-child>ul li .country-code{
     text-align: center;
     padding-top: 10px;
     font-size: 0.7rem;
-    text-align: right;
-    padding-right: 8px;
 }
 
 
@@ -313,11 +310,10 @@ main>.row:nth-child(2)>.container>.col{
 
 main>.row:nth-child(2)>.container>.col:first-child{
     width: 75%;
-    /* background-color: yellow; */
+    background-color: yellow;
 }
 
 main>.row:nth-child(2)>.container>.col:last-child{
-    /* padding: 0 10px; */
     width: 25%;
     /* background-color: lightcoral; */
 }
@@ -379,28 +375,42 @@ main>.row:nth-child(2)>.container>.col:last-child>ul>li>a>div:first-child{
 /* Slide */
 
 #slider{
+    position: relative;
     margin-top: 20px;
-    padding: 10px 10px 0;
+    padding: 0 10px;
     height: 388px;
-    overflow-y: hidden;
+}
+
+#slider-wrapper{
+    height: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; 
+    /* position: relative; */
+    /* animation-name: slide-animation; */
+    /* animation-duration: 15s; */
+    /* animation-iteration-count: infinite; */
 }
 
 .slide{
     position: relative;
+    scroll-snap-align: center;
+    position: absolute;
     background-repeat: no-repeat;
     height: 388px;
     background-size: contain;
     background-position: center;
-    float: left;
     width: 100%;
 }
+
+
 
 .slide .prev, .slide .next{
     position: absolute;
     text-align: center;
     width: 30px;
     height: 30px;
-    line-height: 33px;
+    line-height: 28px;
     background-color: rgba(128,130,133,0.9);
     top: 0;
     bottom: 0;
@@ -412,49 +422,218 @@ main>.row:nth-child(2)>.container>.col:last-child>ul>li>a>div:first-child{
     background-color: rgba(128,130,133,0.8);
 }
 
-.slide .prev:hover, .slide a{
-    color: rgba(222, 223, 224, 0.8);
-}
-
 .slide .prev{
-    left: 10px;
+    left: 20px;
 }
 
 .slide .next{
-    right: 10px;
+    right: 20px;
+}
+
+.slide ion-icon{
+    color: white;
+    vertical-align: sub;
 }
 
 #slide-1{
-    background-image: url(https://boc.lk/image/data/Banner/200Day_investment-2022-Sept-Web.jpg);
+    background-image: url('https://boc.lk/image/data/Banner/200Day_investment-2022-Sept-Web.jpg');
 }
 
 #slide-2{
-    background-image: url(https://boc.lk/image/data/Banner/Pita-pita_season-3-2022-E.jpg);
+    left: 100%;
+    background-image: url('https://boc.lk/image/data/Banner/Pita-pita_season-3-2022-E.jpg');
 }
 
 #slide-3{
-    background-image: url(https://boc.lk/image/data/Banner/SDA-2022-09.jpeg);
+    left: 200%;
+    background-image: url('https://boc.lk/image/data/Banner/SDA-2022-09.jpeg');
 }
 
 #slide-4{
-    background-image: url(https://boc.lk/image/data/Banner/Top1000_2022-En_1.jpg);
+    left: 300%;
+    background-image: url('https://boc.lk/image/data/Banner/Top1000_2022-En_1.jpg');
 }
 
 #slide-5{
-    background-image: url(https://boc.lk/image/data/Banner/green-loan-2022.jpeg);
+    left: 400%;
+    background-image: url('https://boc.lk/image/data/Banner/green-loan-2022.jpeg');
 }
 
 #slide-6{
-    background-image: url(https://boc.lk/image/data/Banner/power-branch-close-2022-En-1.jpg);
+    left: 500%;
+    background-image: url('https://boc.lk/image/data/Banner/power-branch-close-2022-En-1.jpg');
+}
+
+#slides-wrapper{
+    width: 100%;
+    position: relative;
+    animation-name: slider-animation;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slider-animation {
+    0%, 10%{
+        left: 0;
+    }
+
+    16%, 26%{
+        left: -100%;
+    }
+
+    32%, 58%{
+        left: -200%;
+    }
+
+    64%, 76%{
+        left: -300%;
+    }
+
+    82%, 94%{
+        left: -400%;
+    }
+
+    100%{
+        left: -500%;
+    }
+}
+
+
+/* cols */
+
+main>.row>.container>.col{
+    float: left;
+    width: 25%;
+    height: 80px;
+    padding: 0 10px;
+    background-clip: content-box;
+}
+
+main>.row:nth-child(3){
+    padding-top: 20px;
+    height: 245px;
+    /* background-color: lightcoral; */
+}
+
+main>.row:nth-child(3)>.container>.col:nth-child(1){
+    background-color: red;
+}
+
+main>.row:nth-child(3)>.container>.col:nth-child(2){
+    background-color: yellow;
+}
+
+main>.row:nth-child(3)>.container>.col:nth-child(3){
+    background-color: green;
+}
+
+main>.row:nth-child(3)>.container>.col:nth-child(4){
+    background-color: blue;
+}
+
+main>.row:nth-child(3)>.container>.col img{
+    width: 100%;
+    display: block;
+    transition: transform 500ms;
 }
 
 
 
+
+main>.row:nth-child(3)>.container>.col>.wrapper{
+    overflow: hidden;
+    position: relative;
+}
+
+main>.row:nth-child(3)>.container>.col>.wrapper>.overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+main>.row:nth-child(3)>.container>.col>.wrapper>.topic:hover{
+    background-color: yellow;
+    color: #1f1f1f;
+}
+
+main>.row:nth-child(3)>.container>.col .topic{
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    background-color: #525252;
+    color: white;
+    z-index: 1;
+    transition: background-color 500ms;
+}
+
+main>.row:nth-child(3)>.container>.col:hover img{
+    transform: scale(1.2);
+    width: 100%;   
+}
+
+main>.row:nth-child(3)>.container>.col:hover .overlay{
+    display: block;
+}
+
+/* call bar */
+
+main>.row:last-child{
+    padding-bottom: 10px;
+}
+
+main>.row:last-child>.container>.col{
+    float: left;
+    /* background-color: purple; */
+}
+
+main>.row:nth-child(4)>.container>.col:nth-child(1),
+main>.row:nth-child(4)>.container>.col:nth-child(3){
+    padding: 15px;
+    width: 25%;
+    color: #1f1f1f;
+    text-align: right;
+    /* background-color: green; */
+}
+
+main>.row:nth-child(4)>.container>.col:nth-child(1)>p:first-of-type,
+main>.row:nth-child(4)>.container>.col:nth-child(3)>p:first-of-type{
+    padding-bottom: 15px;
+    font-size: 18px;
+    /* background-color: green; */
+}
+
+main>.row:nth-child(4)>.container>.col:nth-child(1)>p:last-of-type{
+    font-size: 20px;
+}
+
+main>.row:nth-child(4)>.container>.col:nth-child(1)>p:last-of-type ion-icon{
+    color: #8a8a8a;
+    padding-right: 15px;
+}
+
+main>.row:nth-child(4)>.container>.col:nth-child(2){
+    /* background-color: yellow; */
+    width: 50%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+main>.row:last-child>.container>.col:last-child>p:last-of-type{
+    font-size: 0.75rem;
+    color: #8a8a8a;
+}
 
 
 /* footer */
 
 footer .row{
+    padding-top: 10px;
     position: relative;
     background-color: #808285;
 }
@@ -466,8 +645,12 @@ footer .row{
 #copyright-row>.container{
     padding: 16px 0;
     text-align: center;
-    color: #808285;
+    color: #515254;
     font-size: 0.7rem;
+}
+
+#username{
+    color: #515254;
 }
 
 footer>.row .col{
@@ -537,7 +720,7 @@ footer>.row::after{
     content: "";
     height: 100%;
     background-color: #515254;
-    width: 25%;
+    width: 30%;
     top: 0;
     right: 0;
     bottom: 0;
@@ -613,4 +796,51 @@ aside a ion-icon{
         transform: scale(15);
         opacity: 0.5;
     }
+}
+
+#popup{
+    position: fixed;
+    left: 10px;
+    bottom: 40px;
+    width: 450px;
+    background-color: #8a8a8aef;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 1px #000000ab
+    ;
+}
+
+#close-wrapper{
+    position: absolute;
+    padding: 5px 0;
+    cursor: pointer;
+
+} 
+
+#close-wrapper:hover{
+    color: rgb(241, 241, 241)
+}
+
+#close-wrapper ion-icon{
+    vertical-align: sub;
+    margin-right: 5px;
+    background-color: rgba(255, 94, 0);
+    border-radius: 100%;
+    padding: 1.5px;
+    font-size: 1.2rem;
+}
+
+#popup p:last-child{
+    padding-top: 5px;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+#warning{
+    padding-top: 10px;
+    padding-left: 160px;
+    color: rgb(202, 38, 106);
+    /* background-color: green; */
+    font-size: 1.2rem;
 }
