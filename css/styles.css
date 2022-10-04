@@ -19,13 +19,13 @@
 /* Typography */
 
 h1{
-    font-size: 1.8rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 2.2rem;
 }
 
 h2{
-    font-size: 1.6rem;
-    line-height: 1.8rem;
+    font-size: 1.8rem;
+    line-height: 2.0rem;
 }
 
 h3{
@@ -35,17 +35,17 @@ h3{
 
 h4{
     font-size: 1rem;
-    line-height: 1.3rem;
+    line-height: 1.2rem;
 }
 
 h5{
     font-size: 0.9rem;
-    line-height: 1.2rem;
+    line-height: 1.1rem;
 }
 
 h6{
     font-size: 0.8rem;
-    line-height: 1.1rem;
+    line-height: 1rem;
 }
 
 /* Layouts */
@@ -239,7 +239,8 @@ nav>li>a{
 
 
 /* main */
-main>.row:first-child, main>.row:first-child>.container{
+main>.row:first-child, 
+main>.row:first-child>.container{
     height: 90px;
 }
 
@@ -251,7 +252,7 @@ main>.row:first-child>.container>.col{
 main .row:first-child>.container>.col:first-child{
     /* background-color: #d74527; */
     width: 75%;
-    /* float: left; */
+    float: left;
 }
 
 main .row:first-child>.container>.col:last-child{
@@ -302,19 +303,20 @@ main .row:first-child>.container>.col:first-child>ul li .country-code{
 
 
 main>.row:nth-child(2)>.container>.col{
-    padding: 20px 0;
+    padding: 20px;
     float: left;
-    height: 420px;
+    /* height: 420px; */
     /* background-color: #0865a9; */
 }
 
 main>.row:nth-child(2)>.container>.col:first-child{
     width: 75%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 main>.row:nth-child(2)>.container>.col:last-child{
     width: 25%;
+    /* float: right; */
     /* background-color: lightcoral; */
 }
 
@@ -329,10 +331,11 @@ main>.row:nth-child(2)>.container>.col:last-child>ul{
 main>.row:nth-child(2)>.container>.col:last-child>ul>li{
     text-transform: uppercase;
     display: table;
+    font-size: 0.9rem;
     width: 100%;
-    /* padding: 10px 10px 10px 20px; */
     border-bottom: 1px solid #ccc;
 }
+
 
 main>.row:nth-child(2)>.container>.col:last-child>ul>li:hover{
     background-color: #525252;
@@ -536,8 +539,6 @@ main>.row:nth-child(3)>.container>.col img{
     display: block;
     transition: transform 500ms;
 }
-
-
 
 
 main>.row:nth-child(3)>.container>.col>.wrapper{
