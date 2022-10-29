@@ -804,11 +804,11 @@ aside a ion-icon{
     left: 10px;
     bottom: 40px;
     width: 450px;
-    background-color: #8a8a8aef;
+    background-color: #a5a5a5;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 6px 1px #000000ab;
-    z-index: 1;
+    z-index: 999;
 }
 
 #close-wrapper{
