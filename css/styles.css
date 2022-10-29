@@ -807,8 +807,8 @@ aside a ion-icon{
     background-color: #8a8a8aef;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 6px 1px #000000ab
-    ;
+    box-shadow: 0 0 6px 1px #000000ab;
+    z-index: 1;
 }
 
 #close-wrapper{
